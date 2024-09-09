@@ -1,6 +1,7 @@
 <template>
     <div class="map-index-field-container">
         <point-index-field v-if="mapType === 'POINT'" :field="field" />
+        <point-index-field v-else-if="mapType === 'MULTI_POINT'" :field="field" />
         <polygon-index-field v-else-if="mapType === 'POLYGON'" :field="field" />
         <multi-polygon-index-field v-else-if="mapType === 'MULTI_POLYGON'" :field="field" />
     </div>

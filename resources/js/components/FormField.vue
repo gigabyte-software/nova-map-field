@@ -15,6 +15,15 @@
                     :resource-name="resourceName"
                 />
 
+                <multi-point-form-field
+                    v-if="mapType === 'MULTI_POINT'"
+                    ref="mapField"
+                    v-model="fieldValue"
+                    :field="currentField"
+                    :resource-id="resourceId"
+                    :resource-name="resourceName"
+                />
+
                 <polygon-form-field
                     v-else-if="mapType === 'POLYGON'"
                     ref="mapField"
@@ -47,6 +56,7 @@
 <script>
 import {DependentFormField, HandlesValidationErrors, Errors} from 'laravel-nova'
 import PointFormField from './form-fields/PointFormField'
+import MultiPointFormField from './form-fields/MultiPointFormField'
 import PolygonFormField from './form-fields/PolygonFormField'
 import MultiPolygonFormField from './form-fields/MultiPolygonFormField'
 import MapExport from './other/MapExport'
@@ -59,7 +69,8 @@ export default {
         MapExport,
         PolygonFormField,
         MultiPolygonFormField,
-        PointFormField
+        PointFormField,
+        MultiPointFormField,
     },
     data() {
         return {

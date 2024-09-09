@@ -12,6 +12,16 @@
                     />
                 </template>
 
+                <template v-else-if="mapType === 'MULTI_POINT'">
+                  <polygon-form-field :field="field" :readonly="true" />
+                  <polygon-index-field
+                      v-if="showDetailButton"
+                      class="mt-3"
+                      :field="field"
+                      :modal-mode="true"
+                  />
+                </template>
+
                 <template v-else-if="mapType === 'POLYGON'">
                     <polygon-form-field :field="field" :readonly="true" />
                     <polygon-index-field
@@ -38,8 +48,10 @@
 
 <script>
 import PointFormField from './form-fields/PointFormField'
+import MultiPointFormField from './form-fields/MultiPointFormField'
 import PolygonFormField from './form-fields/PolygonFormField'
 import PointIndexField from './index-fields/PointIndexField'
+import MultiPointIndexField from './index-fields/MultiPointIndexField'
 import PolygonIndexField from './index-fields/PolygonIndexField'
 import MultiPolygonFormField from './form-fields/MultiPolygonFormField'
 import MultiPolygonIndexField from './index-fields/MultiPolygonIndexField'
@@ -51,7 +63,9 @@ export default {
         MultiPolygonFormField,
         PolygonIndexField,
         PointIndexField,
+        MultiPointIndexField,
         PolygonFormField,
+        MultiPointFormField,
         PointFormField
     },
     data() {

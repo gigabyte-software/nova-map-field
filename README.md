@@ -127,9 +127,10 @@ Therefore, if you decide to use my packages, please kindly consider making a don
     
     namespace App\Nova\Resources;
     
-    use Mostafaznv\NovaMapField\Fields\MapMultiPolygonField;
     use Mostafaznv\NovaMapField\Fields\MapPointField;
+    use Mostafaznv\NovaMapField\Fields\MapMultiPointField;
     use Mostafaznv\NovaMapField\Fields\MapPolygonField;
+    use Mostafaznv\NovaMapField\Fields\MapMultiPolygonField;
     
    
     class Location extends Resource
@@ -138,6 +139,7 @@ Therefore, if you decide to use my packages, please kindly consider making a don
         {
             return [
                 MapPointField::make('location'),
+                MapMultiPointField::make('location'),
                 MapPolygonField::make('area'),
                 MapMultiPolygonField::make('areas'),
             ];
