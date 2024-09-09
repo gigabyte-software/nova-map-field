@@ -1,6 +1,6 @@
 {
-    "name": "mostafaznv/nova-map-field",
-    "description": "Map Field for Laravel Nova",
+    "name": "gigabyte-software/nova-map-field",
+    "description": "Map Field for Laravel Nova. Updating to include multi-point field",
     "keywords": [
         "laravel",
         "map",
